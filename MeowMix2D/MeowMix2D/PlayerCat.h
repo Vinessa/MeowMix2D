@@ -2,8 +2,8 @@
 #ifndef _PLAYERCAT_H_
 #define _PLAYERCAT_H_
 
+#include <time.h>
 #include "sprite.h"
-#include "time.h"
 
 class PlayerCat :
 	public Sprite
@@ -14,6 +14,9 @@ public:
 	~PlayerCat(void);
 
 	void Jump();
+	void DeltaTime();
+	void UpdateCat();
+	void CheckforJump();
 
 	bool IsAlive; //Alive or Dead? >^._.^<
 	int m_HeroHealth; //Current Health
@@ -23,8 +26,9 @@ public:
 	//unsigned int m_RespawnID;
 	//float Score;
 	float Lives;
-	int Gravity;
-	int JumpHeight;
+	float Gravity;
+	float JumpHeight;
+	float dt;
 };
 #endif //_PLAYERCAT_H_
 

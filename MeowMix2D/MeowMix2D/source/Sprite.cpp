@@ -71,6 +71,8 @@ void Sprite::Init(const char* a_TextureName, int a_Sprite_W, int a_Sprite_H, flo
 
 void Sprite::Move()
 {
+	m_Position.SetX(m_Position.GetX() + m_Velocity.GetX());
+	m_Position.SetY(m_Position.GetY() + m_Velocity.GetY());
 	MoveSprite(m_SpriteID, m_Position.GetX(),m_Position.GetY());
 }
 void Sprite::Draw()
@@ -111,7 +113,7 @@ bool Sprite:: TestOnScreen()
 void Sprite::Update()
 {
 	
-	TestOnScreen();
+	//TestOnScreen();
 	Move();
 	Draw();
 }
