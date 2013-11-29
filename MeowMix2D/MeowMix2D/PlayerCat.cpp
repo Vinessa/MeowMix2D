@@ -1,7 +1,5 @@
 #include "PlayerCat.h"
 
-
-
 PlayerCat::PlayerCat()
 {
 }
@@ -31,35 +29,11 @@ PlayerCat::~PlayerCat(void)
 {
 }
 
-void PlayerCat::DeltaTime()
-{
-dt = GetDeltaTime();
-}
 
-void PlayerCat::UpdateCat() //formerly jump
+void PlayerCat::Jump()
 {
-	
-	if((m_Velocity.GetY()) == 0)
-	{
+	if((m_Velocity.GetY()) = 0)
 		m_Position.SetY((m_Position.GetY())+((m_Velocity.GetY()*dt)));
 		m_Velocity.SetY((m_Velocity.GetY() - (Gravity *dt)));
 
-			if (m_Position.GetY() < 0)
-			{
-				m_Velocity.SetY(0);
-				m_Position.SetY(0);
-			}
-	}
 }
-
-void PlayerCat::CheckforJump()
- {
-  	if (IsKeyDown(KEY_SPACE))
-	{
- 		if ((m_Velocity.GetY()) == 0)
-		{
-			m_Velocity.SetY(JumpHeight);
-		}
-	}
-}
-

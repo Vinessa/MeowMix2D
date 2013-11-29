@@ -48,7 +48,6 @@ public:
 	unsigned int m_SpriteID;
 	CircleCollider m_Collider;
 
-
 	int m_iScreenX, m_iScreenY;
 
 };
